@@ -1,0 +1,5 @@
+@import "_mixins/font-face";
+
+@include font-face("ChampagneLimousines", "../fonts/ChampagneLimousines/ChampagneLimousines");
+@include font-face("CenturyGothicBold", "../fonts/CenturyGothicBold/CenturyGothicBold", bold);
+@include font-face("HelveticaNeueCyrRoman", "../fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman");
