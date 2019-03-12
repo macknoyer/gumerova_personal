@@ -32,6 +32,14 @@ body {
 		}
 	}
 }
+.all {
+	background:url('../img/bbls.png') no-repeat;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
 a {
 	text-decoration: none;
 	color: inherit;
@@ -211,6 +219,7 @@ header {
 .slider1 {
 	    padding: 16px 0 27px 0px;
 	    background:url('../img/slider1_bg.jpg') no-repeat;
+	    background-size: cover;
 	&__title {
 		text-align: center;
 		letter-spacing: 2px;
@@ -293,7 +302,7 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		padding: 8px 11px;
 		padding-bottom: 51px;
 		min-height: 285px;
-		max-height: 285px;
+		max-height: 299px;
 		overflow: hidden;
 		&-text {
 			display: none;
