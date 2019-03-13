@@ -135,6 +135,7 @@ header {
 			@include media-breakpoint-down(xs) {
 				background: url('../img/head_mob.jpg') no-repeat;
 				background-position: center;
+				background-size: cover;
 
 			}
 			@include media-breakpoint-down(md) {
@@ -1041,6 +1042,12 @@ header {
 .prices {
 	padding: 19px 0px 97px 0px;
 	background:url('../img/prices_bg.jpg') no-repeat;
+			@include media-breakpoint-down(md) {
+				 background-image: url('../img/prices_bg_mob.jpg'), url('../img/prices_bg_mob2.jpg');
+				 background-position: top,bottom;
+				background-size: contain,contain;
+				 background-repeat: no-repeat, no-repeat;
+			}
 	&__title {
 		text-align: center;
 		letter-spacing: 2px;
