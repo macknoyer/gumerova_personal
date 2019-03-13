@@ -486,6 +486,7 @@ header {
 			@include media-breakpoint-down(md) {
 				height: auto;
 				font-size: 30px;
+				margin-bottom: 15px;
 			}
 			&:after {
 				content:'';
@@ -547,6 +548,7 @@ header {
 			@include media-breakpoint-down(md) {
 				font-size: 8px;
 				padding: 15px 25px;
+				line-height: 1.2;
 
 			}
 
