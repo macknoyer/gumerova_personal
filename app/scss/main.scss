@@ -42,7 +42,7 @@ body {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	opacity: 0.4;
+	opacity: 0.7;
 }
 a {
 	text-decoration: none;
@@ -127,14 +127,16 @@ header {
 	background: url('../img/head_bg.png') no-repeat;
 	padding: 38px 0px 35px 0;
 	background-size: cover;
+	background-position: center;
+
 			@include media-breakpoint-down(xs) {
 				background: url('../img/head_mob.jpg') no-repeat;
+				background-position: center;
 
 			}
 			@include media-breakpoint-down(md) {
 					padding-top: 20px;
 					padding-bottom: 12px;
-					background-position: center;
 			}
 		.title1{
 			font-family: "CenturyGothicBold", sans-serif;
@@ -247,9 +249,9 @@ header {
 	background-position: center top;
 	padding: 62px 0px 69px 0;
 	text-align: center;
-	background-size: cover;
 			@include media-breakpoint-down(md) {
 				padding: 32px 0 32px 0;
+				background-size: cover;
 			}
 	&__container {
 		margin-right: 35px;
@@ -291,9 +293,9 @@ header {
 		color: $accent;
 		text-transform: uppercase;
 		margin-bottom: 19px;
+		text-align: center;
 			@include media-breakpoint-down(md) {
 				font-size: 17px;
-				text-align: center;
 			}
 	}
 	&__list {
@@ -335,6 +337,10 @@ header {
 	    background:url('../img/slider1_bg.jpg') no-repeat;
 	    background-size: cover;
 	    background-position: center;
+	.owl-carousel .owl-stage-outer {
+		    padding-top: 29px;
+   			 padding-bottom: 25px;
+	}
 	&__title {
 		text-align: center;
 		letter-spacing: 2px;
@@ -350,38 +356,47 @@ header {
 	}
 	&__container {
 		padding: 0px 156px;
+			@include media-breakpoint-down(md) {
+				padding: 0px;
+			}
 	}
 	.slick-list {
 		
 		padding-top: 30px !important;
 		padding-bottom: 30px !important;
 	}
-	.slick-prev,.slick-next {
+	
+	.owl-carousel .owl-nav button.owl-next, 
+	.owl-carousel .owl-nav button.owl-prev {
+		top: 34px;
 		height: 285px;
 		width: 156px;
 		z-index: 9;
 		margin-top: -5px;
+		position: absolute;
+		background-color: transparent;
+		outline: none !important;
 		&:before {
 			position: absolute;
 			display: block;
-			height: 285px;
 			width: 156px;
+			top: 0;
+			bottom: 0;
 			content: "";
-			top: 42px;
+			background-position: center !important;
 			@include media-breakpoint-down(md) {
 				width: 50px;
-				height: 130px;
-				top: 31px;
+				
 			}
 		}
 			@include media-breakpoint-down(md) {
 				width: 50px;
-				height: 130px;
+				height: 150px;
 			}
 	}
-	.slick-prev {	
-left: 0;
-background-image: linear-gradient(to right, transparent, rgba(130,61,96,1));
+	.owl-carousel .owl-nav button.owl-prev{	
+		left: 0;
+		background-image: linear-gradient(to right, transparent, rgba(130,61,96,1));
 
 
 
@@ -390,9 +405,9 @@ background-image: linear-gradient(to right, transparent, rgba(130,61,96,1));
 				background-size: contain;
 		}
 	}
-	.slick-next {
-right: 0;
-background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
+	.owl-carousel .owl-nav button.owl-next {
+		right: 0;
+		background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 
 		&:before {
 			background: url("../img/arrow_right.svg") no-repeat;
@@ -402,8 +417,11 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 	&__wrapper {
 		 padding: 30px 0px;
    		 // overflow: hidden;
+				@include media-breakpoint-down(md) {
+					padding-bottom: 0;
+				}
 	}
-		.slick-center {
+		.owl-item.active.center {
 			transform: scale(1.08,1.08);
 			z-index: 10;
 			// min-width: 224px;
@@ -420,6 +438,9 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 				background:url('../img/slider_num.png') no-repeat;
 				background-size: contain;
 				background-position: center 6px;
+				@include media-breakpoint-down(md) {
+					background-position: center 2px;
+				}
 			}
 
 		}
@@ -434,11 +455,19 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		min-height: 285px;
 		max-height: 299px;
 		overflow: hidden;
+			@include media-breakpoint-down(md) {
+				min-height: 150px;
+				padding-bottom: 10px;
+			}
 		&-text {
 			display: none;
 			text-shadow: -1px -1px 2px rgba(255, 255, 255, 1);
 			font-size: 16px;
 			line-height: 1.5;
+
+			@include media-breakpoint-down(md) {
+				font-size: 9px;
+			}
 		}
 		&-num {
 				position: relative;
@@ -451,6 +480,10 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 			line-height: 63px;
 			text-align: center;
 			height: 130px;
+			@include media-breakpoint-down(md) {
+				height: auto;
+				font-size: 30px;
+			}
 			&:after {
 				content:'';
 				height: 5px;
@@ -521,16 +554,24 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 	background:url('../img/prog_bg.png') no-repeat;
 	background-size: cover;
 	background-position: center;
+			@include media-breakpoint-down(md) {
+				padding: 15px 0 15px 0px;
+
+			}
 	&__container {
 		padding: 0 82px;
 		&-row {
 			margin-bottom: 26px;
 			@include media-breakpoint-down(md) {
+				margin-bottom: 10px;
+
+			}
+			@include media-breakpoint-down(sm) {
 				margin-bottom: 0;
 
 			}
 		}
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				padding: 0;
 				text-align: center;
 
@@ -542,12 +583,16 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		flex: 0 0 auto;
 		text-align: center;
 			@include media-breakpoint-down(md) {
-				margin-right: 0;
-				margin:auto;
 				width: 24px;
+				margin-right: 20px;
 				svg {
 					width: 100%;
 				}
+
+			}
+			@include media-breakpoint-down(sm) {
+				margin-right: 0;
+				margin:auto;
 
 			}
 	}
@@ -557,15 +602,18 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		margin-right: 51px;
 		min-width: 231px;
 		@include media-breakpoint-down(md) {
-			margin-right: 0;
-			margin:auto;
 			max-width: 115px;
-			flex: none;
 			min-width: 115px;
+			margin-right: 20px;
 			img {
 				width: 100%;
 				height: auto;
 			}
+		}
+		@include media-breakpoint-down(sm) {
+			margin-right: 0;
+			margin:auto;
+			flex: none;		
 		}
 	}
 	&__text {
@@ -826,9 +874,16 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 			top: -78px;
 			right: 0;
 			@include media-breakpoint-down(md) {
+				width: 100px;
+				height: 90px;
+				top: -41px;
+				right: auto;
+			}
+			@include media-breakpoint-down(sm) {
 				width: 44px;
 				height: 44px;
 				top: -5px;
+				margin-left: 20px;
 			}
 		}
 		&-container {
@@ -838,6 +893,8 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 			@include media-breakpoint-down(md) {
 				font-size: 10px;
 				padding: 0 8px;
+			}
+			@include media-breakpoint-down(sm) {
 				max-width: 255px;
 			}
 	}
@@ -851,7 +908,12 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		display: flex;
 		align-items: center;
 			@include media-breakpoint-down(md) {
+				max-width: 140px;
+				padding: 15px 5px 50px 5px;
+			}
+			@include media-breakpoint-down(sm) {
 				padding: 7px;
+				max-width: none;
 			}
 		input[type="checkbox"] {
 			visibility: hidden;
@@ -867,6 +929,9 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 				margin-bottom: 0;
 					@include media-breakpoint-down(md) {
 						font-size: 11px;
+
+					}
+					@include media-breakpoint-down(sm) {
 						text-align: left;
 						padding-left: 30px;
 
@@ -886,6 +951,10 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 					@include media-breakpoint-down(md) {
 						width: 25px;
 						height: 19px;
+						left: calc(50% - 12px);
+
+					}
+					@include media-breakpoint-down(sm) {
 						bottom: auto;
 						left: 5px;
 						top: calc(50% - 9px);
@@ -909,12 +978,12 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 				&:last-of-type {
 					padding-right: 0;
 				}
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				margin-bottom: 10px;
 				padding-right: 0;
 			}
 			}
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				margin-bottom: 0;
 			}
 		}
@@ -1084,6 +1153,10 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 	padding: 19px 0px 100px 0px;
 	background:url('../img/reviews_bg.jpg') no-repeat;
 	background-position: center;
+	background-size: cover;
+			@include media-breakpoint-down(md) {
+				padding: 	19px 0px 19px 0px;
+			}
 	&__title {
 		text-align: center;
 		letter-spacing: 2px;
@@ -1093,6 +1166,11 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		font-size: 34px;
 		text-shadow: -1px -1px 14px #fff;
 		margin-bottom: 44px;
+			@include media-breakpoint-down(md) {
+				font-size: 16px;
+				text-align: center;
+				margin-bottom: 25px;
+			}
 	}
 	&__item {
 		background:#ffffff;
@@ -1104,23 +1182,40 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 		color: $accent;
 		margin-bottom: 0;
 		line-height: 47px;
+			@include media-breakpoint-down(md) {
+				font-size: 15px;
+				line-height: 1.2;
+			}
 
 		}
 		&-pos {
 			font-family: 'CenturyGothicBold',sans-serif;
 			font-size: 19px;
 			color: #8b8b8b;
+			@include media-breakpoint-down(md) {
+				font-size: 11px;
+			}
 		}
 		&-text {
 			font-size: 21px;
+			@include media-breakpoint-down(md) {
+				font-size: 11px;
+			}
 		}
 	}
 	.slider2__container {
 		    padding: 0 134px;
+			@include media-breakpoint-down(md) {
+				padding: 0 40px;
+			}
 		.slick-prev,.slick-next {
 			height: 285px;
 			width: 156px;
 			z-index: 9;
+				@include media-breakpoint-down(md) {
+					width: 40px;
+					height: 100%;
+				}
 			&:before {
 				position: absolute;
 				display: block;
@@ -1128,18 +1223,31 @@ background-image: linear-gradient(to left, transparent, rgba(130,61,96,1));
 				width: 156px;
 				content: "";
 				top: 42px;
+				@include media-breakpoint-down(md) {
+					width: 40px;
+					height: 100%;
+					top: 0;
+				}
 			}
 		}
 		.slick-prev {	
 			left: 0;
 			&:before {
 				background: url("../img/arrow_left.svg") no-repeat;
+				@include media-breakpoint-down(md) {
+					background-position: center;
+					background-size: contain;
+				}
 			}
 		}
 		.slick-next {
 			right: 0;
 			&:before {
 				background: url("../img/arrow_right.svg") no-repeat;
+				@include media-breakpoint-down(md) {
+					background-position: center;
+					background-size: contain;
+				}
 			}
 		}
 	}
